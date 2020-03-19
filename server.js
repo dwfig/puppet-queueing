@@ -62,8 +62,8 @@ players.on("connection", (socket) =>{
     let numFutures = stories.future.length
 
     chosenPast = stories.past[randInRange(numPasts)]
-    chosenPresent = stories.past[randInRange(numPresents)]
-    chosenFuture = stories.past[randInRange(numFutures)]
+    chosenPresent = stories.present[randInRange(numPresents)]
+    chosenFuture = stories.future[randInRange(numFutures)]
 
     // start with chosenPast story
     // break into one (or two??) word chunks
@@ -73,7 +73,21 @@ players.on("connection", (socket) =>{
     // chosenFuture = chosenFuture.split(" ")
 
     // pick three sockets to start -- currentQueue
-    // send them all "update"
+		// length of users
+
+		// choose three
+		while (currentQueue.length < 3) {
+			let userIds = Object.keys(users)
+			let addedSocket = userIds[randInRange(userIds.length)]
+			if (currentQueue.indexOf(addedSocket) === -1){
+				currentQueue.push(addedSocket)
+			}
+		}
+
+		for (let i = 0; i < Object.keys(users).length; i++){
+
+		}
+    // send them all "update" -- separate update fn
 
     // break words off the front of the array as we update
   })
