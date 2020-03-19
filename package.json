@@ -1,0 +1,17 @@
+{
+	"name": "Puppet Queueing",
+	"version": "1.0.0",
+	"description": "",
+	"author": {
+		"name": "Daniel Fries",
+		"email": "dwf253@nyu.edu"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "^4.17.1",
+		"socket.io": "^2.3.0"
+	}
+}
